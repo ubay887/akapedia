@@ -84,7 +84,7 @@ class KelasController extends Controller
             ]);
         }
 
-        return redirect('/data_kelas'.$id.'tambah_siswa')->with('succes', 'Tambah Siswa');
+        return redirect('/data_kelas/'.$id.'/tambah_siswa')->with('succes', 'Tambah Siswa');
     }
 
     public function deletesiswa($id, $idsiswa)

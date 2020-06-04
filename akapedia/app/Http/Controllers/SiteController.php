@@ -8,6 +8,7 @@ use App\Berita;
 use App\Kelas;
 use App\Mapel;
 use App\Promosi;
+use App\Siswa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -90,8 +91,11 @@ class SiteController extends Controller
 
     public function dashboard()
     {
+        $kelas = kelas::all();
+        $siswa = Siswa::where('id', auth()->user()->siswa->id);
+
         $about = About::orderBy('created_at', 'DESC')->paginate(1);
-        return view('site.dashboard', compact(['about']));
+        return view('site.dashboard', compact(['about', 'kelas', 'siswa']));
     }
 
     public function about()

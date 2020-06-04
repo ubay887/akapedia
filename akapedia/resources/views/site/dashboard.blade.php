@@ -18,6 +18,7 @@ Dashboard
                             {{ auth()->user()->siswa->getAvatar() }}
                             @endif" class="mt-2" width="100" height="100" alt="">
                             <h3>{{ auth()->user()->name }}</h3>
+                            <h3>{{ $siswa->nama }}</h3>
 
                         </div>
                     </div>
