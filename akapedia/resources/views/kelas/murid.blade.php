@@ -13,6 +13,9 @@ Kelas
                     <div class="panel">
                         <div class="panel-heading">
                             <h3>{{ $kelas->kelas }}</h3>
+                            <div class="right">
+                                <a href="{{ route('print.siswa', $kelas->id) }}" class="btn btn-primary">Print</a>
+                            </div>
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">

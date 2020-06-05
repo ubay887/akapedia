@@ -6,6 +6,7 @@ use App\Kelas;
 use App\Pegawai;
 use App\Siswa;
 use Illuminate\Http\Request;
+use PDF;
 
 class KelasController extends Controller
 {
@@ -93,6 +94,15 @@ class KelasController extends Controller
         $kelas->siswa()->detach($idsiswa);
 
         return redirect()->back()->with('succes', 'Data Berhasil Dihapus');
+    }
+
+    public function print($id)
+    {
+        $kelas = Kelas::find($id);
+        $siswa = Siswa::all();
+        $pdf = PDF::loadview('export.kelaspdf', compact(['kelas', 'siswa']));
+
+        return $pdf->download('kelas.pdf');
     }
 
 }

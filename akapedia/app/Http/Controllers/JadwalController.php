@@ -6,6 +6,7 @@ use App\Kelas;
 use App\Kelas_mapel;
 use App\Mapel;
 use Illuminate\Http\Request;
+use PDF;
 
 class JadwalController extends Controller
 {
@@ -49,6 +50,16 @@ class JadwalController extends Controller
         $kelas->mapel()->detach($idmapel);
 
         return redirect()->back()->with('succes', 'Data Berhasil Dihapus');
+    }
+
+    public function print($id)
+    {
+        $kelas = Kelas::find($id);
+        $mapel = Mapel::all();
+        $pdf = PDF::loadview('export.jadwalpdf', compact(['kelas', 'mapel']));
+
+        return $pdf->download('data_jadwal.pdf');
+
     }
 
 }

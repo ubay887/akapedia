@@ -81,12 +81,14 @@ Route::group(['middleware' => ['auth', 'checkRole:kepala sekolah,guru,tu']], fun
     Route::post('/data_kelas/{id}/update', 'KelasController@update')->name('kelas.update');
     Route::get('/data_kelas/{id}/delete', 'KelasController@delete')->name('kelas.delete');
     Route::get('/data_kelas/{id}/{idmapel}/delete', 'KelasController@deletesiswa');
+    Route::get('/data_kelas/{id}/print_siswa', 'KelasController@print')->name('print.siswa');
 
     Route::get('/data_jadwal', 'JadwalController@index')->name('jadwal');
     Route::get('/data_jadwal/{id}/input_jadwal', 'JadwalController@inputjadwal')->name('jadwal.create_jadwal');
     Route::post('/data_jadwal/{id}/create', 'JadwalController@create')->name('jadwal.create');
     Route::get('/data_jadwal/{id}/jadwal', 'JadwalController@jadwal')->name('jadwal.kelas');
     Route::get('/data_jadwal/{id}/{idsiswa}/delete', 'JadwalController@delete')->name('jadwal.delete');
+    Route::get('/data_jadwal/{id}/print_jadwal', 'JadwalController@print')->name('jadwal.print');
 
     Route::get('/data_about', 'DashboardController@about')->name('about');
     Route::post('/data_about', 'DashboardController@create')->name('about.input');

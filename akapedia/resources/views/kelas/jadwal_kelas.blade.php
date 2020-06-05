@@ -13,6 +13,9 @@ Jadwal
                     <div class="panel">
                         <div class="panel-heading">
                             <h3 class="text-primary">{{ $kelas->kelas }}</h3>
+                            <div class="right">
+                                <a href="{{ route('jadwal.print', $kelas->id) }}" class="btn btn-primary">Print</a>
+                            </div>
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">

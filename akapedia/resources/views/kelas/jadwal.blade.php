@@ -13,6 +13,7 @@ Jadwal
                     <div class="panel">
                         <div class="panel-heading">
                             <h3 class="text-primary">Jadwal</h3>
+
                         </div>
                         <div class="panel-heading">
                             <div class="table-responsive">
