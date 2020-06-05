@@ -38,6 +38,7 @@ Route::group(['middleware' => ['auth', 'checkRole:kepala sekolah,guru,tu']], fun
     Route::get('/data_siswa/{id}/{idmapel}/delete', 'SiswaController@deletenilai');
     Route::get('/data_siswa/excel', 'SiswaController@exportExcel')->name('export_excel');
     Route::get('/data_siswa/pdf', 'SiswaController@exportPDF')->name('export_pdf');
+    Route::get('/data_siswa/{id}/print_nilai', 'SiswaController@print')->name('siswa.nilai');
 
     Route::get('/data_pegawai', 'PegawaiController@index')->name('pegawai');
     Route::post('/data_pegawai/create', 'PegawaiController@create')->name('create_pegawai');

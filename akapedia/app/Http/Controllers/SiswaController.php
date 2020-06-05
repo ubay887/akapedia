@@ -163,4 +163,13 @@ class SiswaController extends Controller
         return redirect('/index/dashboard')->with('succes', 'Berhasil Update Profile');
     }
 
+    public function print($id)
+    {
+        $siswa = Siswa::find($id);
+        $mapel = Mapel::orderBy('created_at', 'DESC')->paginate(10);
+        $print = PDF::loadview('export.nilaipdf', compact(['siswa', 'mapel']));
+
+        return $print->download('nilaipdf.pdf');
+    }
+
 }

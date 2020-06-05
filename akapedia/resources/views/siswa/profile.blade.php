@@ -63,11 +63,13 @@ Profile
                                 data-target="#exampleModal" style="float: right;">
                                 <i class="lnr lnr-plus-circle"></i> Nilai
                             </button>
+                            <a href="{{ route('siswa.nilai', $siswa->id)}}" class="btn btn-primary" style="float: right;">Print</a>
                             @elseif(auth()->user()->role == 'guru')
                             <button type="button" class="btn btn-primary heading" data-toggle="modal"
                                 data-target="#exampleModal" style="float: right;">
                                 <i class="lnr lnr-plus-circle"></i> Nilai
                             </button>
+                            <a href="{{ route('siswa.nilai', $siswa->id)}}" class="btn btn-primary" style="float: right;">Print</a>
                             @endif
                             <table class="table table-bordered table-hover table-striped ">
                                 <thead>
