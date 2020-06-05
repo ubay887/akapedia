@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\About;
 use App\Exports\SiswaExport;
 use App\Mapel;
 use App\Siswa;
@@ -170,6 +171,15 @@ class SiswaController extends Controller
         $print = PDF::loadview('export.nilaipdf', compact(['siswa', 'mapel']));
 
         return $print->download('nilaipdf.pdf');
+    }
+
+    public function nilaisiswa($id)
+    {
+        $siswa = Siswa::find($id);
+        $mapel = Mapel::orderBy('created_at', 'DESC')->paginate(10);
+        $about = About::orderBy('created_at', 'DESC')->paginate(1);
+
+        return view('site.nilai_siswa', compact(['siswa', 'mapel', 'about']));
     }
 
 }

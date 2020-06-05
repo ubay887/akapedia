@@ -45,4 +45,21 @@ class Siswa extends Model
     {
         return $this->belongsTo(Kelas::class);
     }
+
+    public function nilai()
+    {
+        foreach ($this->mapel as $mapel) {
+            if ($mapel->pivot->nilai <= 85) {
+                return "A";
+            } elseif ($mapel->pivot->nilai <= 65) {
+                return "B";
+            } elseif ($mapel->pivot->nilai <= 45) {
+                return "C";
+            } elseif ($mapel->pivot->nilai <= 35) {
+                return "D";
+            } elseif ($mapel->pivot->nilai <= 0) {
+                return "E";
+            }
+        }
+    }
 }

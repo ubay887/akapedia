@@ -9,7 +9,6 @@
         padding: 8px;
     }
 </style>
-<h3>{{ $siswa->nama }}</h3><br>
 
 <table class="table">
     <thead>
@@ -33,7 +32,7 @@
             <td>{{ $mapel->nama }}</td>
             <td>{{ $mapel->guru->nama }}</td>
             <td>{{ $mapel->pivot->semester }}</td>
-            <td>{{ $mapel->pivot->nilai }}</td>
+            <td>{{ $siswa->nilai() }}</td>
         </tr>
         @php
         $no++;

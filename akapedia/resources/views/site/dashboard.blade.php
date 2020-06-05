@@ -34,6 +34,14 @@ Dashboard
                                 </div>
                                 <div class="card col-sm-4">
                                     <div class="card-body">
+                                        <a href="{{ route('nilai.siswa', auth()->user()->siswa->id) }}">
+                                            <h5 style="color: black;"><i class="fas fa-book"
+                                                    style="color: black;"></i> Nilai</h5>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="card col-sm-4">
+                                    <div class="card-body">
                                         <a href="{{ route('site.logout') }}">
                                             <h5 style="color: black;"><i class="fas fa-sign-out-alt"
                                                     style="color: black;"></i> Logout</h5>

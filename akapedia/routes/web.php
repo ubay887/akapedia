@@ -105,8 +105,10 @@ Route::group(['middleware' => ['auth', 'checkRole:kepala sekolah,guru,tu']], fun
 
 Route::group(['middleware' => ['auth', 'checkRole:siswa']], function() {
     Route::get('/index/dashboard/', 'SiteController@dashboard')->name('site.dashboard');
-    Route::get('index/edit_siswa/{id}/edit', 'SiswaController@editsiswa')->name('edit.siswa');
-    Route::post('index/update_siswa/{id}/upadate', 'SiswaController@updatesiswa')->name('update.siswa');
+    Route::get('/index/edit_siswa/{id}/edit', 'SiswaController@editsiswa')->name('edit.siswa');
+    Route::post('/index/update_siswa/{id}/upadate', 'SiswaController@updatesiswa')->name('update.siswa');
+    Route::get('/index/siswa/{id}/nilai', 'SiswaController@nilaisiswa')->name('nilai.siswa');
+    Route::get('/index/siswa/{id}/print_nilai', 'SiswaController@print')->name('siswa.nilai');
 });
 
 
