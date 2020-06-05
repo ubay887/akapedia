@@ -32,7 +32,7 @@
             <td>{{ $mapel->nama }}</td>
             <td>{{ $mapel->guru->nama }}</td>
             <td>{{ $mapel->pivot->semester }}</td>
-            <td>{{ $siswa->nilai() }}</td>
+            <td>{{ $mapel->pivot->nilai }}</td>
         </tr>
         @php
         $no++;

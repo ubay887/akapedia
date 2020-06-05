@@ -99,7 +99,7 @@ class SiswaController extends Controller
     public function profile($id)
     {
         $siswa = Siswa::find($id);
-        $matapelajaran = Mapel::all();
+        $matapelajaran = Mapel::orderBy('created_at', 'DESC')->paginate(10);
 
         return view('siswa.profile', [
             'siswa' => $siswa,
@@ -180,6 +180,15 @@ class SiswaController extends Controller
         $about = About::orderBy('created_at', 'DESC')->paginate(1);
 
         return view('site.nilai_siswa', compact(['siswa', 'mapel', 'about']));
+    }
+
+    public function printsiswa($id)
+    {
+        $siswa = Siswa::find($id);
+        $mapel = Mapel::orderBy('created_at', 'DESC')->paginate(10);
+        $print = PDF::loadview('export.nilaipdf', compact(['siswa', 'mapel']));
+
+        return $print->download('nilaipdf.pdf');
     }
 
 }

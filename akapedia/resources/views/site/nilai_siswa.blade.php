@@ -15,7 +15,7 @@ Nilai
                         <div class="panel-heading">
                             <h3>{{ $siswa->nama }}</h3>
                             <div class="right">
-                                <a href="{{ route('siswa.nilai', $siswa->id) }}" class="btn btn-primary">Print</a>
+                                <a href="{{ route('print.siswa', $siswa->id) }}" class="btn btn-primary">Print</a>
                             </div>
                         </div>
                         <div class="panel-body">
@@ -37,7 +37,7 @@ Nilai
                                                 <td>{{ $mapel->nama }}</td>
                                                 <td>{{ $mapel->guru->nama }}</td>
                                                 <td>{{ $mapel->pivot->semester }}</td>
-                                                <td>{{ $siswa->nilai() }}</td>
+                                                <td>{{ $mapel->pivot->nilai }}</td>
                                             </tr>
                                         @endforeach
                                     </tbody>
