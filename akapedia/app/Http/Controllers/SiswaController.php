@@ -99,7 +99,7 @@ class SiswaController extends Controller
     public function profile($id)
     {
         $siswa = Siswa::find($id);
-        $matapelajaran = Mapel::orderBy('created_at', 'DESC')->paginate(10);
+        $matapelajaran = Mapel::all();
 
         return view('siswa.profile', [
             'siswa' => $siswa,
