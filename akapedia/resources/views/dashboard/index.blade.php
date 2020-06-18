@@ -17,7 +17,7 @@ Dashboard
                                 <span class="icon"><i class="lnr lnr-user"></i></span>
                                 <p>
                                     <span class="number">{{ total_siswa() }}</span>
-                                    <span class="tittle">Total Siswa</span>
+                                    <span class="tittle">Siswa</span>
                                 </p>
                             </div>
                         </div>
